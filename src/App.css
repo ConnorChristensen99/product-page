@@ -1,38 +1,337 @@
 .App {
   text-align: center;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+
+
 
 .App-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: calc(10px + 2vmin);
+  color: #282c34;
+}
+.leftSideMenu, .rightSideMenu, .inputHolder {
+  display: flex;
+  align-items: center;
+}
+.leftSideMenuOpen {
+  padding: 25px;
+}
+.rightSideMenu {
+  padding-right: 25px;
+}
+.iconsTopRight {
+  margin: 0 15px 0 15px;
+}
+.inputText {
+  border-radius: 5px;
+  height: 25px;
+  position: relative;
+  width: 600px;
+}
+.searchIcon {
+  position: relative;
+  color: black;
+  font-size: medium;
+  left: -30px;
+}
+input.inputText {
+  padding-left: 10px;
+}
+
+
+
+
+
+.nav {
+  background-color: #949496;
+  margin-bottom: -18px;
+  box-shadow: inset 0 0 10px #5c5c5c;
+}
+.navList {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+.saleItem  {
+ color: red;
+ padding: 15px 45px 15px 45px;
+ margin-bottom: 2px;
+ font-weight: 700;
+ transition: background-color 1s ease-out 50ms
+}
+.saleItem:hover {
+  background-color: red;
+  color: white;
+  margin-bottom: 2px;
+}
+.navListItem {
+  color: #282c34;
+  padding: 15px 45px 15px 45px;
+  margin-bottom: 2px;
+  font-weight: 600;
+  transition: background-color 1s ease-out 50ms
+}
+.navListItem:hover {
   background-color: #282c34;
-  min-height: 100vh;
+  color: white;
+  margin-bottom: 2px;
+}
+
+
+
+
+
+.saleBanner {
+  background-color: #FCDED8;
+  display: flex;
+  justify-content: space-around;
+}
+.leftSideBanner p, .middleBanner p, .rightSideBanner p{
+  font-size: small;
+  color: grey;
+  margin-top: -10px;
+}
+
+
+
+
+
+
+
+.mainProductPage {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 50px;
+}
+.productName {
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: -40px;
+}
+.contentHeader {
+  text-align: right;
+}
+.productHeart {
+  font-size: xx-large;
+  margin-bottom: -25px;
+}
+.prices {
+  display: flex;
+  align-items: center;
+}
+.salePrice {
+  color: red;
+  font-size: x-large;
+  font-weight: 700;
+  padding-right: 10px;
+}
+.normalPrice {
+  color: grey;
+  text-decoration: line-through;
+  font-size: medium;
+}
+.bold {
+  font-weight: 800;
+}
+.colorOptions, .colorText {
+  text-align: left;
+}
+.dotMocha {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px;
+  background-color: #967969;
+  transition: border .5s ease-out 20ms;
+  border: 2px solid rgb(0, 0, 0);
+}
+.dotMocha:hover {
+  border: 2px solid black;
+}
+.dotGreen {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px;
+  background-color: #20460e;
+  border: 2px solid white;
+  transition: border .5s ease-out 20ms;
+}
+.dotGreen:hover {
+  border: 2px solid black;
+}
+.dotYellow {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px;
+  background-color: #e7de63;
+  border: 2px solid white;
+  transition: border .5s ease-out 20ms;
+}
+.dotYellow:hover {
+  border: 2px solid black;
+}
+.dotGrey {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px;
+  background-color: #adaaa8;
+  border: 2px solid white;
+  transition: border .5s ease-out 20ms;
+}
+.dotGrey:hover {
+  border: 2px solid black;
+}
+.sizingButtons button{
+  margin: 10px;
+  background-color: white;
+  height: 45px;
+  width: 90px;
+  border: .5px solid black;
+  transition: background-color .5s ease-out 20ms;
+}
+.sizingButtons button:hover {
+  color: white;
+  background-color: #282c34;
+}
+.sizeTitle {
+  text-align: left;
+}
+.cartButton {
+  width: 100%;
+  height: 10%;
+  background-color: #282c34;
+  color: white;
+  border: none;
+  font-weight: 600;
+  font-size: x-large;
+  margin-top: 25px;
+}
+.cartButton:hover {
+  background-color: #4c5361;
+}
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  padding: 25px 10px 25px 10px;
+  transition: background-color .2s ease-out 100ms;
+  font-weight: 700;
+  font-size: larger;
+}
+.accordion-title:hover {
+  cursor: pointer;
+  background-color: #b4b4b44b;
+}
+.accordion-item {
+  max-width: 500px;
+}
+.accordion-content {
+  padding-bottom: 45px;
+}
+
+
+
+
+
+footer {
+  margin-top: 70px;
+  background-color: #F5F4EF;
+}
+.mainFooter {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+.mainFooter h2 {
+  margin-right: -40px;
+}
+.mainFooter ul {
+  list-style-type: none;
+  color: grey;
+}
+.mainFooter ul li:hover {
+  color: black;
+  cursor: pointer;
+}
+.leftSideFooter{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.leftSideFooter ul li {
+  padding: 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.leftSideFooter ul {
+  margin-top: -10px;
+}
+.rightSideFooter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.rightSideFooter ul li {
+  padding: 10px;
+}
+.rightSideFooter ul {
+  margin-top: -10px;
+}
+.middleFooter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.middleFooter ul li {
+  padding: 10px;
+}
+.middleFooter ul {
+  margin-top: -10px;
+}
+.secondFooter {
+  display: flex;
+  justify-content: center;
+}
+.secondFooter p {
+  padding: 15px;
+}
+.copyright {
+  display: flex;
+  align-items: center;
+}
+.thirdFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.thirdFooter p {
+  padding-left: 10px;
+}
+.secondFooter p:hover {
+  cursor: pointer;
+  color: grey;
+}
+.indivFooter {
+  padding: 10px;
+}
+.indivFooter:hover {
+  cursor: pointer;
+  color:#282c34
+}
+.socials {
+  margin-left: 45px;
+  font-size: xx-large;
+}
+.payment {
+  margin-right: 45px;
+  font-size: xx-large;
 }
