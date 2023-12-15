@@ -119,6 +119,9 @@ input.inputText {
   font-size: xx-large;
   margin-bottom: -25px;
 }
+.productHeart:hover {
+  cursor: pointer;
+}
 .prices {
   display: flex;
   align-items: center;
@@ -140,6 +143,16 @@ input.inputText {
 .colorOptions, .colorText {
   text-align: left;
 }
+.activeColor {
+  outline: 2px solid black;
+}
+.sizingButtons .buttonSelected {
+  background-color: black;
+  color: white;
+}
+.red {
+  color: red;
+}
 .dotMocha {
   height: 30px;
   width: 30px;
@@ -147,11 +160,12 @@ input.inputText {
   display: inline-block;
   margin: 5px;
   background-color: #967969;
+  border: 2px solid white;
   transition: border .5s ease-out 20ms;
-  border: 2px solid rgb(0, 0, 0);
 }
 .dotMocha:hover {
   border: 2px solid black;
+  cursor:pointer;
 }
 .dotGreen {
   height: 30px;
@@ -165,6 +179,7 @@ input.inputText {
 }
 .dotGreen:hover {
   border: 2px solid black;
+  cursor:pointer;
 }
 .dotYellow {
   height: 30px;
@@ -178,6 +193,7 @@ input.inputText {
 }
 .dotYellow:hover {
   border: 2px solid black;
+  cursor:pointer;
 }
 .dotGrey {
   height: 30px;
@@ -191,6 +207,7 @@ input.inputText {
 }
 .dotGrey:hover {
   border: 2px solid black;
+  cursor:pointer;
 }
 .sizingButtons button{
   margin: 10px;

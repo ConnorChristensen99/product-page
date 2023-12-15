@@ -2,7 +2,7 @@ import './App.css';
 import { FaShoppingBag, FaUserAlt, FaRegHeart, FaGripHorizontal, FaSearch, FaRegCopyright, FaFacebookF, FaLinkedinIn, FaTiktok, FaInstagram, FaCcVisa, FaCcMastercard, FaCcAmex, FaCcPaypal } from "react-icons/fa";
 import product from './main-product.jpeg';
 import Accordion from './accordion';
-
+import React, { useState } from 'react';
 
 function App() {
   //Handles the accordian on the bottom of the product pages
@@ -32,6 +32,38 @@ function App() {
       `
     }
   ];
+
+    const [chosenColor, setChosenColor] = useState('Mocha');
+  
+    function activeColor(color) {
+      setChosenColor(color);
+  
+      const allColors = document.getElementsByClassName('colorOptions')[0].children;
+      for (let i = 0; i < allColors.length; i++) {
+        allColors[i].classList.remove('activeColor');
+      }
+  
+      let thisColor = document.getElementsByClassName(`dot${color}`);
+      thisColor[0].classList.add('activeColor');
+    }
+  
+    const [ chosenSize, setChosenSize ] = useState('Please Select a Size');
+  function handleClick(e) {
+    setChosenSize(e.target.innerHTML);
+    const allButtons = document.getElementsByClassName('sizingButtons')[0].children;
+    for (let i = 0; i < allButtons.length; i++) {
+      allButtons[i].classList.remove('buttonSelected');
+    }
+
+    e.target.classList.add('buttonSelected');
+  }
+
+  function changeRed() {
+    const heart = document.getElementsByClassName('productHeart')[0];
+    heart.classList.toggle('red');
+  }
+
+
 
 
 
@@ -98,7 +130,7 @@ function App() {
         <div className='contentSide'>
           <div className='contentHeader'>
         <h2 className='productName'>Petite Contrast Belted Cardigan Dress</h2> 
-        <FaRegHeart className='productHeart'/>
+        <FaRegHeart className='productHeart' onClick={changeRed}/>
         </div>
         {/* PRICES OF PRODUCT */}
         <div className="prices">
@@ -106,21 +138,21 @@ function App() {
         <p className='normalPrice'>$25.00</p>
         </div>
         {/* COLOR OPTIONS FOR PRODUCT */}
-        <p className='colorText'><span className='bold'>Colour - </span>Mocha</p>
+        <p className='colorText'><span className='bold'>Colour - </span>{chosenColor}</p>
         <div className='colorOptions'>
-        <span class="dotMocha"></span>
-        <span class="dotGreen"></span>
-        <span class="dotYellow"></span>
-        <span class="dotGrey"></span>
+        <span class="activeColor dotMocha" onClick={() => activeColor('Mocha')}></span>
+        <span class="dotGreen" onClick={() => activeColor('Green')}></span>
+        <span class="dotYellow" onClick={() => activeColor('Yellow')}></span>
+        <span class="dotGrey" onClick={() => activeColor('Grey')}></span>
         </div>
         {/* SIZE OPTIONS FOR PRODUCT */}
-        <p className='sizeTitle'>Size</p>
+        <p className='sizeTitle'>Size: {chosenSize}</p>
         <hr/>
         <div className="sizingButtons">
-        <button>8 (XS)</button>
-        <button>10 (S)</button>
-        <button>12 (M)</button>
-        <button>14 (L)</button>
+        <button onClick={handleClick}>8 (XS)</button>
+        <button onClick={handleClick}>10 (S)</button>
+        <button onClick={handleClick}>12 (M)</button>
+        <button onClick={handleClick}>14 (L)</button>
         </div>
 
 {/* ADD TO CART BUTTON */}
